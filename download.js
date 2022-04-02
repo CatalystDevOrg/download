@@ -41,9 +41,7 @@ fetch('https://api.github.com/repos/jaydendev/catalyst/releases/latest')
           }
           // if on android or iOS, set text to "no downloads available for current platform"
           if (os == "android" || os == "ios") {
-            const download = document.getElementById('download');
-            download.innerText = "No downloads available for current platform";
-            return;
+            alert("There are no downloads available for your current platform.");
           }
             const li = document.createElement('li');
             const a = document.createElement('a');
