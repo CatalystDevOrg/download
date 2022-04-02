@@ -35,7 +35,7 @@ fetch('https://api.github.com/repos/jaydendev/catalyst/releases/latest')
             const a = document.createElement('a');
             a.href = asset.browser_download_url;
             a.innerText = "Download for " + os;
-            a.className = 'rounded-lg hover:bg-emerald-300 bg-emerald-400 text-5xl text-white p-2';
+            a.className = 'animate-pulse center grid place-items-center rounded-lg hover:bg-emerald-300 bg-emerald-400 text-5xl text-white p-2';
             li.appendChild(a);
             document.getElementById('downloads').appendChild(li);
         });
