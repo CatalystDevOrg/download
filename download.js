@@ -13,7 +13,7 @@ fetch('https://api.github.com/repos/jaydendev/catalyst/releases/latest')
             const a = document.createElement('a');
             a.href = asset.browser_download_url;
             a.innerText = asset.name;
-            a.className = 'text-2xl text-white';
+            a.className = 'text-sm text-white';
             li.appendChild(a);
             document.getElementById('downloads').appendChild(li);
         });
