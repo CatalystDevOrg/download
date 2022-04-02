@@ -33,6 +33,8 @@
                   } else {
                       if (os == "mac" && asset.name.indexOf(".dmg") == -1) {
                           return;
+                      } else {
+                          alert("There are no downloads for your OS.")
                       }
                   }
               }
