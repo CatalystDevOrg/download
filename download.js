@@ -7,7 +7,15 @@
   else if (navigator.userAgent.indexOf("Linux") != -1) {
       os = "linux";
   }
-
+  // detect android
+  else if (navigator.userAgent.indexOf("Android") != -1) {
+      os = "android";
+  }
+  // detect iOS
+  else if (navigator.userAgent.indexOf("iPhone") != -1) {
+      os = "ios";
+  }
+  
 fetch('https://api.github.com/repos/jaydendev/catalyst/releases/latest')
     .then(res => res.json())
     .then(res => {
@@ -29,6 +37,12 @@ fetch('https://api.github.com/repos/jaydendev/catalyst/releases/latest')
           }
           // if on MacOS, only show dmg files
           if (os == "mac" && asset.name.indexOf(".dmg") == -1) {
+            return;
+          }
+          // if on android or iOS, set text to "no downloads available for current platform"
+          if (os == "android" || os == "ios") {
+            const download = document.getElementById('download');
+            download.innerText = "No downloads available for current platform";
             return;
           }
             const li = document.createElement('li');
