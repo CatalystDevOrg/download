@@ -39,9 +39,10 @@ fetch('https://api.github.com/repos/jaydendev/catalyst/releases/latest')
           if (os == "mac" && asset.name.indexOf(".dmg") == -1) {
             return;
           }
-          // if on android or iOS, set text to "no downloads available for current platform"
-          if (os == "android" || os == "ios") {
-            document.querySelector('#download').innerText = "No downloads available for current platform";
+          // if not on any of the above, show an alert
+          if (os == "") {
+            alert("Your OS is not supported");
+            return;
           }
             const li = document.createElement('li');
             const a = document.createElement('a');
